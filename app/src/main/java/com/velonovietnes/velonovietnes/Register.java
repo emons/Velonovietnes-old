@@ -28,11 +28,15 @@ public class Register extends ActionBarActivity implements View.OnClickListener 
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v) {                                                   //What happends why listener receives a click
         switch (v.getId())
         {
-            case R.id.bRegister:
+            case R.id.bRegister:                                                    //Register button clicked
+                String username = etUsername.getText().toString();
+                String email = etEmail.getText().toString();
+                String password = etPassword.getText().toString();
 
+                User registeredData = new User(username, email, password);
 
                 break;
         }
