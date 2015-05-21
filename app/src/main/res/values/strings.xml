@@ -13,4 +13,7 @@
     <string name="confirmPass">Confirm password</string>
     <string name="logout">Logout</string>
     <string name="registerLinkText">Don\'t have an account? Register here.</string>
+    <string name="processing">Processing</string>
+    <string name="pleaseWait">Please wait...</string>
+    <string name="incorrectUsernamePassword">Incorrect username or password.</string>
 </resources>

@@ -36,7 +36,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(authenticate())
         {
             displayUserDetails();                                      //šeit jābūt start activity uz google maps
-        }
+        }else
+            {
+                startActivity(new Intent(MainActivity.this, Login.class));
+            }
     }
 
     private boolean authenticate()                                              //Check if a user is logged in

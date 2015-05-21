@@ -1,5 +1,6 @@
 package com.velonovietnes.velonovietnes;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,9 +37,22 @@ public class Register extends ActionBarActivity implements View.OnClickListener 
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                User registeredData = new User(username, email, password);
+                User user = new User(username, email, password);
+
+                registerUser(user);                                                 //Calling the registration activity
 
                 break;
         }
+    }
+
+    private void registerUser(User user)                                            //Registering the user
+    {
+        ServerRequests serverRequests = new ServerRequests(this);                   //new server request
+        serverRequests.storeUserDataInBackground(user, new GetUserCallback() {      //Store the user data in background
+            @Override
+            public void done(User returnedUser) {
+                startActivity(new Intent(Register.this, Login.class));
+            }
+        });
     }
 }
